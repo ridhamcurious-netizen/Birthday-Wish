@@ -1,0 +1,138 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+font-family:'Pacifico', cursive;
+background: linear-gradient(135deg, #00c9ff, #92fe9d);
+color: #ffd93d;
+text-shadow: 0 0 15px #fff6a1,
+0 0 25px #ffef8c;
+overflow:hidden;
+}
+
+/* title container fixed at top */
+.title-container{
+position:absolute;
+top:40px;
+text-align:center;
+}
+.title{
+font-size:2.8rem;
+text-shadow:0 0 15px rgba(93, 69, 182, 0.9);
+animation:titlePulse 3s ease-in-out infinite alternate;
+}
+@keyframes titlePulse{
+from{transform:scale(1);opacity:0.9}
+to{transform:scale(1.04);opacity:1}
+}
+
+/* center cake + actor */
+.cake-container{
+position:relative;
+width:180px;
+height:150px;
+display:flex;
+align-items:flex-end;
+justify-content:center;
+margin-top:100px; /* space from title */
+}
+
+/* cake layers */
+.cake{
+position:absolute;
+width:100%;
+height:100%;
+transition:opacity 1.5s ease;
+animation:floatCake 2s ease-in-out infinite;
+box-shadow:0 0 25px rgba(255,200,200,0.45);
+}
+.layer{position:absolute;width:100%;left:0;border-radius:10px}
+.layer1{height:50px;bottom:0;background:linear-gradient(to top,#ffb3b3,#ff8080)}
+.layer2{height:40px;bottom:50px;background:linear-gradient(to top,#ffd6a5,#ffad60)}
+.layer3{height:35px;bottom:90px;background:linear-gradient(to top,#b3e6ff,#66ccff)}
+
+@keyframes floatCake{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* candle */
+.candle{
+position:absolute;
+top:-45px;
+left:50%;
+transform:translateX(-50%);
+width:12px;height:45px;
+background:#fff;border-radius:4px;
+cursor:pointer;
+display:flex;align-items:flex-start;justify-content:center;
+}
+.flame{
+position:relative;
+top:-12px;
+width:18px;height:18px;border-radius:50%;
+background:radial-gradient(circle,#ff0,#ffa500);
+box-shadow:0 0 28px 6px #ffb84d;
+animation:flicker .35s infinite;
+}
+@keyframes flicker{
+0%{transform:scale(1);opacity:1}
+50%{transform:scale(1.08);opacity:.85}
+100%{transform:scale(1);opacity:1}
+}
+
+/* puff */
+#puff{
+position:absolute;
+width:40px;height:40px;border-radius:50%;
+background:rgba(255,255,255,0.85);
+opacity:0;pointer-events:none;
+transform:translate(-50%,0);
+filter:blur(1px);
+}
+
+/* actor image */
+#actor, #actor2, #actor3{
+position:absolute;
+bottom:-15px;
+left:50%;
+transform:translateX(-50%) translateY(10px);
+width:270px;
+height:auto;
+opacity:0;
+transition: transform 1.2s ease, opacity 1.2s ease;
+border:4px solid #fff; /* white border */
+border-radius:12px; /* soft corners */
+box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* glowing effect */
+pointer-events:none;
+}
+.next-text {
+  position: relative; /* below the images */
+  top: 20px; /* space below actor image */
+  font-size: 1.2rem;
+  color: #003366; /* choose a color that contrasts with background */
+  text-align: center;
+  opacity: 0; /* hidden initially */
+  transition: opacity 1s ease, transform 1s ease;
+  transform: translateY(20px);
+}
+
+.next-text.show {
+  top: 70px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
+}
+
+/* balloons */
+.balloon{
+position:absolute;
+bottom:-120px;
+width:40px;height:60px;border-radius:50%;
+animation:floatUp linear forwards;
+}
+@keyframes floatUp{0%{transform:translateY(0)}100%{transform:translateY(-120vh)}}

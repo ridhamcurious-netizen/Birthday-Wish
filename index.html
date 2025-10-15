@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Birthday Surprise</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Title moved above everything -->
+<div class="title-container">
+<h1 class="title">🎉Happy Birthday Areeba ! 🎉</h1>
+</div>
+
+<!-- cake + actor share the same position -->
+<div class="cake-container">
+<div class="cake" id="cake">
+<div class="layer layer1"></div>
+<div class="layer layer2"></div>
+<div class="layer layer3"></div>
+
+<!-- candle -->
+<div class="candle" id="candle" role="button" aria-label="Blow candle">
+<div class="flame" id="flame"></div>
+</div>
+</div>
+
+<!-- actor image (hidden by default) -->
+<img src="/images/Screenshot_20251015_224733_Gallery-removebg-preview.png" id="actor" alt="Actor">
+<img id="actor2" src="/images/Screenshot_20251015_224736_Gallery-removebg-preview.png" alt="Actor Image 2">
+<img id="actor3" src="/images/Screenshot_20251015_232855_Gallery-removebg-preview.png" alt="Actor Image 3">
+<!-- Click text below third actor -->
+<div id="next-text" class="next-text">Click Here</div>
+
+
+</div>
+
+<div id="puff" aria-hidden="true"></div>
+<div id="balloons" aria-hidden="true"></div>
+<audio id="bg-music" loop>
+<source src="/images/Happy Birthday Countdown Song 🎉 Birthday Party Music - Birthday Radio Music.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js" defer></script>
+</body>
+</html>
